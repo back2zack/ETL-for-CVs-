@@ -1,0 +1,11 @@
+# Ignore virtual environment
+ETLvenv/
+
+# Ignore environment variables
+.env
+
+# Other common ignores (optional)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
