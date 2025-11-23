@@ -9,6 +9,7 @@ import google.generativeai as genai
 
 
 # test ssh config 
+# test 2 ssh config with the right user 
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY")) 
 
