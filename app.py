@@ -8,7 +8,10 @@ from PIL import Image
 import google.generativeai as genai
 
 
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+# test ssh config 
+# test 2 ssh config with the right user 
+
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY")) 
 
 ## Function to load Gemini Pro Vision
 model = genai.GenerativeModel(
