@@ -11,8 +11,14 @@ import google.generativeai as genai
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 ## Function to load Gemini Pro Vision
-model = genai.GenerativeModel("gemini-1.5-pro")  # or "gemini-1.5-flash"
-
+model = genai.GenerativeModel(
+    "models/gemini-2.5-flash",
+    generation_config={
+        "temperature": 0.9,
+        "top_p": 0.8,
+        "top_k": 40
+    }
+)
 
 def get_gemini_response(input_prompt,image, prompt):
     # input_prompt --> telling the model what should do ! in this case it s the extraction of data 
@@ -47,8 +53,9 @@ if uploaded_file is not None:
 
 submit =st.button("Tell me about the document")
 input_prompt = """
-You are an expert in analyzing CVs.
-You will receive an image of a resume and extract details about the person.
+You are an english teacher in morrocco.
+You will receive an image of questionary that is a part of master research project exploring how morrocan high school English as a foreign language teachers integrate cultural content in their teaching.
+use simple language and be direct in your answers.
 """
 
 if submit:
